@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class SkillTreeManager : MonoBehaviour
@@ -7,53 +8,47 @@ public class SkillTreeManager : MonoBehaviour
     public static SkillTreeManager Instance;
 
     [SerializeField] private PlayerStats playerStats;
-    [SerializeField] private int vertices;
 
-    [SerializeField] private List<SkillDefinition> allSkills;
+    [SerializeField] private List<SkillButton> allSkills;
 
-    private Dictionary<string, int> skillLevels = new();
+    private Dictionary<SkillDefinition, int> skillLevels = new();
 
     void Awake()
     {
         Instance = this;
+
         playerStats.damage = 0;
         playerStats.shotSpeed = 0;
         playerStats.speed = 0;
-    }
+        playerStats.vertices = 200;
 
-    public bool CanBuy(SkillDefinition skill)
-    {
-        int level = skillLevels[skill.id];
-
-        if (level >= skill.maxPoints)
-            return false;
-
-        int cost = skill.costs[level];
-        if (vertices < cost)
-            return false;
-
-        if (skill.requiredSkill != null)
+        foreach (var skillButton in allSkills)
         {
-            int reqLevel = skillLevels[skill.requiredSkill.id];
-            if (reqLevel < skill.requiredPoints)
-                return false;
+            skillLevels.Add(skillButton.skill, 0);
         }
 
-        return true;
+        foreach (var skillButton in allSkills)
+        {
+            int levelOfReq = (skillButton.skill.requiredSkill == null) ? -1 : skillLevels[skillButton.skill.requiredSkill];
+            skillButton.UpdateVisuals(skillLevels[skillButton.skill], levelOfReq);
+        }
     }
 
     public void Buy(SkillDefinition skill)
     {
-        if (!CanBuy(skill))
-            return;
-
-        int level = skillLevels[skill.id];
+        int level = skillLevels[skill];
         int cost = skill.costs[level];
 
-        vertices -= cost;
-        skillLevels[skill.id]++;
+        playerStats.vertices -= cost;
+        skillLevels[skill]++;
 
         ApplySkill(skill);
+
+        foreach (var skillButton in allSkills)
+        {
+            int levelOfReq = (skillButton.skill.requiredSkill == null) ? -1 : skillLevels[skillButton.skill.requiredSkill];
+            skillButton.UpdateVisuals(skillLevels[skillButton.skill], levelOfReq);
+        }
     }
 
     void ApplySkill(SkillDefinition skill)

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e35ee0b12a3eeb0408dcb32951dae32f, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
-  damage: 0
+  vertices: 0
+  damage: 20
   speed: 0
   shotSpeed: 0

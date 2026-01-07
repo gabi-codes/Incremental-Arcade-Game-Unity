@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(menuName = "Game/Skill")]
 public class SkillDefinition : ScriptableObject
@@ -19,6 +20,10 @@ public class SkillDefinition : ScriptableObject
     [Header("Effect")]
     public SkillType skillType;
     public int valuePerPoint;
+
+    [Header("Visuals")]
+    public Sprite icon;
+    public float branchRotation;
 }
 
 public enum SkillType

@@ -44,6 +44,7 @@ public class EnemyCore : MonoBehaviour
             case 0:
                 color = Color.yellow;
                 scale = 1f;
+                maxHp += 10;
                 break;
 
             case 1:
