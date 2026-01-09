@@ -10,6 +10,7 @@ public class EnemyCore : MonoBehaviour
 
     [SerializeField] private SpriteRenderer outsideSprite;
     [SerializeField] private EnemyHealth enemyHealth;
+    [SerializeField] private Vert vertPrefab;
 
     [Header("Stats")]
     [SerializeField] private float maxHp;
@@ -93,6 +94,13 @@ public class EnemyCore : MonoBehaviour
 
     void Die()
     {
+        int count = Random.Range(1, 3);
+
+        for (int i = 0; i < count; i++)
+        {
+            Vert vert = Instantiate(vertPrefab, (Vector2)transform.position, Quaternion.identity);
+        }
+        
         Destroy(root);
     }
 

@@ -6,8 +6,12 @@ using UnityEngine;
 public class PlayerStats : ScriptableObject
 {
     public int vertices;
+    
+    public int maxHp;
+    
     public int damage;
     public int speed;
     public int shotSpeed;
+
 }
 

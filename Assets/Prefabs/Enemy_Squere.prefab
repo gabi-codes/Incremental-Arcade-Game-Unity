@@ -63,6 +63,7 @@ MonoBehaviour:
   root: {fileID: 5698853362602124527}
   outsideSprite: {fileID: 7504528989265214684}
   enemyHealth: {fileID: 3781150570772345234}
+  vertPrefab: {fileID: 1430687316946656287, guid: 1f125eedd133f68439f1379f00ace9ec, type: 3}
   maxHp: 2.5
   scale: 1
   damage: 1

@@ -34,7 +34,7 @@ public class SkillButton : MonoBehaviour
     private Color currentColor;
     private float progress;
 
-    private float colorTransitionTime = 0.5f;
+    private float colorTransitionTime = 0.6f;
     private Coroutine colorRoutine;
 
     private States state;
@@ -54,6 +54,15 @@ public class SkillButton : MonoBehaviour
     {
         icon.sprite = skill.icon;
         root.transform.rotation = Quaternion.Euler(0, 0, 0);
+    }
+
+    public void SetInactive()
+    {
+        branachImage.color = colorDisabled;
+        icon.color = colorDisabled;
+        borderImage.color = colorDisabled;
+        fillImage.color = colorDisabled;
+        progressImage.color = colorDisabled;
     }
 
     public void OnClick()

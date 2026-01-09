@@ -30,6 +30,7 @@ public class SkillTreeManager : MonoBehaviour
         foreach (var skillButton in allSkills)
         {
             int levelOfReq = (skillButton.skill.requiredSkill == null) ? -1 : skillLevels[skillButton.skill.requiredSkill];
+            skillButton.SetInactive();
             skillButton.UpdateVisuals(skillLevels[skillButton.skill], levelOfReq);
         }
     }

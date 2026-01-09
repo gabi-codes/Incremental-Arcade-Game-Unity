@@ -4,23 +4,37 @@ using UnityEngine;
 
 public class Planet : MonoBehaviour
 {
-    public float speed = 1f;          // prêdkoœæ przesuwania
-    public float resetX = -3.5f;        // po jakiej odleg³oœci resetujemy
+    [SerializeField] PlayerStats stats;
 
-    // Start is called before the first frame update
-    void Start()
+
+    private int maxHp = 5;
+    private int currentHp = 5;
+
+
+    private void Awake()
     {
-        
+        currentHp = maxHp + stats.maxHp;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        transform.position += Vector3.left * speed * Time.deltaTime;
 
-        if (transform.position.x <= resetX)
+        Vert vert = other.GetComponent<Vert>();
+        if (vert != null)
         {
-            transform.position = new Vector2(6.5f, 0f);
+            stats.vertices += 1;
+            Destroy(vert.gameObject);
+            return;
+        }
+
+        EnemyCore enemy = other.GetComponentInParent<EnemyCore>();
+        if (enemy != null)
+        {
+            currentHp -= enemy.damage;
+            Destroy(enemy.gameObject);
+            return;
         }
     }
+
+
 }
