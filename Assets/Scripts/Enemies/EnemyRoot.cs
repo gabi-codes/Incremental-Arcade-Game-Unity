@@ -13,4 +13,9 @@ public class EnemyRoot : MonoBehaviour
         core.Init(tier);
         
     }
+
+    public void Stop()
+    {
+        movement.isActive = false;
+    }
 }

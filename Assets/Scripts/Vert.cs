@@ -23,6 +23,8 @@ public class Vert : MonoBehaviour
     private float timer;
     private bool pulling;
 
+    public bool isActive = true;
+
     Vector2 center;
 
     void Start()
@@ -33,6 +35,8 @@ public class Vert : MonoBehaviour
 
     private void Awake()
     {
+        isActive = true;
+
         Vector2 baseDir = ((Vector2)transform.position - center).normalized;
         float angleOffset = Random.Range(-15f, 15f);
         Vector2 rotatedDir = Quaternion.Euler(0f, 0f, angleOffset) * baseDir;
@@ -44,6 +48,8 @@ public class Vert : MonoBehaviour
 
     void Update()
     {
+        if (!isActive) return;
+
         timer += Time.deltaTime;
 
         Vector2 toCenter = (center - (Vector2)transform.position).normalized;

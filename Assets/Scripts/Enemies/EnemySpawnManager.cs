@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour
+public class EnemySpawnManager : MonoBehaviour
 {
 
     [Header("Enemy")]
@@ -17,11 +17,30 @@ public class EnemySpawner : MonoBehaviour
 
     int currentWave = 0;
 
+    private Coroutine spawnRoutine;
+
     void Start()
     {
-        StartCoroutine(SpawnWaves());
+        
     }
 
+    public void StartSpawning()
+    {
+        if (spawnRoutine != null)
+            StopCoroutine(spawnRoutine);
+
+        spawnRoutine = StartCoroutine(SpawnWaves());
+    }
+
+    public void StopSpawning()
+    {
+        if (spawnRoutine != null)
+        {
+            StopCoroutine(spawnRoutine);
+            spawnRoutine = null;
+        }
+    }
+    
     IEnumerator SpawnWaves()
     {
         yield return SpawnWave1();

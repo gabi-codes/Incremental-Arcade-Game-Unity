@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - Currency
   layers:
   - Default
   - TransparentFX
@@ -49,4 +51,7 @@ TagManager:
     locked: 0
   - name: Enemy
     uniqueID: 1100879765
+    locked: 0
+  - name: UI
+    uniqueID: 2551234187
     locked: 0

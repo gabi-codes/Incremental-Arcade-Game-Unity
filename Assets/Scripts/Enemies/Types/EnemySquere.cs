@@ -13,6 +13,8 @@ public class EnemySquereMovement : MonoBehaviour
 
     private int pathVariant;
 
+    public bool isActive = true;
+
     public void Init(int pathVar)
     {
 
@@ -24,7 +26,8 @@ public class EnemySquereMovement : MonoBehaviour
 
     void Update()
     {
-        MoveAlongPath();
+        if (isActive) 
+            MoveAlongPath();
     }
 
     void BuildPath()

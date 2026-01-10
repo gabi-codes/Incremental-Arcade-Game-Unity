@@ -17,11 +17,6 @@ public class SkillTreeManager : MonoBehaviour
     {
         Instance = this;
 
-        playerStats.damage = 0;
-        playerStats.shotSpeed = 0;
-        playerStats.speed = 0;
-        playerStats.vertices = 200;
-
         foreach (var skillButton in allSkills)
         {
             skillLevels.Add(skillButton.skill, 0);
@@ -31,7 +26,26 @@ public class SkillTreeManager : MonoBehaviour
         {
             int levelOfReq = (skillButton.skill.requiredSkill == null) ? -1 : skillLevels[skillButton.skill.requiredSkill];
             skillButton.SetInactive();
+            
+        }
+    }
+
+    public void Activate()
+    {
+        foreach (var skillButton in allSkills)
+        {
+            int levelOfReq = (skillButton.skill.requiredSkill == null) ? -1 : skillLevels[skillButton.skill.requiredSkill];
             skillButton.UpdateVisuals(skillLevels[skillButton.skill], levelOfReq);
+        }
+    }
+
+    public void Disactivate()
+    {
+        foreach (var skillButton in allSkills)
+        {
+            int levelOfReq = (skillButton.skill.requiredSkill == null) ? -1 : skillLevels[skillButton.skill.requiredSkill];
+            skillButton.SetInactive();
+
         }
     }
 
