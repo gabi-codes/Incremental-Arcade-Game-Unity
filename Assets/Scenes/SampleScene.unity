@@ -460,37 +460,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33ae3bd490094e44d97713740bb719ec, type: 3}
---- !u!1 &406920532
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 406920533}
-  m_Layer: 0
-  m_Name: SquereSpawn_1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &406920533
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 406920532}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: 2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1517629170}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &413578407
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1610,6 +1579,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1599122683}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &977548551 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7819846564979913115, guid: c65572677a6378148a1bf1666b285a1b, type: 3}
+  m_PrefabInstance: {fileID: 805238167}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1080637088
 GameObject:
   m_ObjectHideFlags: 0
@@ -1906,68 +1880,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1324141454}
   m_CullTransparentMesh: 1
---- !u!1 &1353664387
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1353664388}
-  m_Layer: 0
-  m_Name: SquereSpawn_4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1353664388
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1353664387}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1517629170}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1393189334
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1393189335}
-  m_Layer: 0
-  m_Name: SquereSpawn_2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1393189335
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1393189334}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: -2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1517629170}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1455322067
 GameObject:
   m_ObjectHideFlags: 0
@@ -2100,11 +2012,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 406920533}
-  - {fileID: 1393189335}
-  - {fileID: 2022612397}
-  - {fileID: 1353664388}
+  m_Children: []
   m_Father: {fileID: 851309814}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1517629171
@@ -2120,11 +2028,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   squareEnemyPrefab: {fileID: 5698853362602124527, guid: 2f3ea3758cc7ed84297256c469ff55cf, type: 3}
-  spawnPoints:
-  - {fileID: 406920533}
-  - {fileID: 1393189335}
-  - {fileID: 2022612397}
-  - {fileID: 1353664388}
+  circleEnemyPrefab: {fileID: 5698853362602124527, guid: 92ee99be5b68b5e47816883939f23674, type: 3}
   timeBetweenSpawns: 0.5
   timeBetweenWaves: 3
 --- !u!1 &1599122682
@@ -2291,6 +2195,7 @@ MonoBehaviour:
   darken: {fileID: 433913491}
   startButton: {fileID: 606915655}
   planet: {fileID: 1599122686}
+  player: {fileID: 977548551}
   spawnManager: {fileID: 1517629171}
 --- !u!4 &1681334236 stripped
 Transform:
@@ -2502,37 +2407,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7773e18bd833514fbf3ac296a8cbfa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &2022612396
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2022612397}
-  m_Layer: 0
-  m_Name: SquereSpawn_3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2022612397
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2022612396}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: -2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1517629170}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2043262116 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8525581908647614855, guid: 33ae3bd490094e44d97713740bb719ec, type: 3}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyRoot : MonoBehaviour
 {
-    [SerializeField] private EnemySquereMovement movement;
+    [SerializeField] private EnemyMovement movement;
     [SerializeField] private EnemyCore core;
 
     public void Init(int pathVariant, int tier)

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.PlayerLoop;
 using static UnityEngine.GraphicsBuffer;
 
-public class EnemySquereMovement : MonoBehaviour
+public class EnemySquere : EnemyMovement
 {
     [SerializeField] private EnemyCore core;
 
@@ -13,9 +13,7 @@ public class EnemySquereMovement : MonoBehaviour
 
     private int pathVariant;
 
-    public bool isActive = true;
-
-    public void Init(int pathVar)
+    public override void Init(int pathVar)
     {
 
         pathVariant = pathVar;

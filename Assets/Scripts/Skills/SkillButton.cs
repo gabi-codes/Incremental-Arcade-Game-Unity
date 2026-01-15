@@ -121,7 +121,7 @@ public class SkillButton : MonoBehaviour
 
                 TransitionColors
                 (
-                    currentColor,
+                    Color.white,
                     Color.white,
                     Color.white,
                     new Color(currentColor.r, currentColor.g, currentColor.b, 0.1f),
@@ -137,7 +137,7 @@ public class SkillButton : MonoBehaviour
 
                 TransitionColors
                 (
-                    currentColor,
+                    Color.white,
                     Color.white,
                     currentColor,
                     new Color(currentColor.r, currentColor.g, currentColor.b, 0.1f),
@@ -153,7 +153,7 @@ public class SkillButton : MonoBehaviour
 
                 TransitionColors
                 (
-                    currentColor,
+                    Color.white,
                     Color.white,
                     currentColor,
                     new Color(currentColor.r, currentColor.g, currentColor.b, 0.1f),

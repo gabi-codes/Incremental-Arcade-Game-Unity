@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject darken;
     [SerializeField] private GameObject startButton;
     [SerializeField] private Planet planet;
+    [SerializeField] private GameObject player;
     [SerializeField] private EnemySpawnManager spawnManager;
 
     void Start()
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
         stats.vertices = 200;
 
         darken.SetActive(false);
+        player.SetActive(false);
 
         SkillTreeManager.Instance.Activate();
     }
@@ -32,6 +34,7 @@ public class GameManager : MonoBehaviour
         spawnManager.StartSpawning();
 
         startButton.SetActive(false);
+        player.SetActive(true);
 
     }
 
@@ -53,6 +56,8 @@ public class GameManager : MonoBehaviour
             Vert vert = currency.GetComponent<Vert>();
             if (vert != null) { vert.isActive = false; }
         }
+
+        player.SetActive(false);
     }
 
     public void EnableSkillTree()
