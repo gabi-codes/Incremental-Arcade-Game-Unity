@@ -6,8 +6,7 @@ public class EnemySpawnManager : MonoBehaviour
 {
 
     [Header("Enemy")]
-    public GameObject squareEnemyPrefab;
-    public GameObject circleEnemyPrefab;
+    public GameObject[] enemies;
 
     [Header("Timing")]
     public float timeBetweenSpawns = 0.5f;
@@ -16,6 +15,13 @@ public class EnemySpawnManager : MonoBehaviour
     int currentWave = 0;
 
     private Coroutine spawnRoutine;
+    enum Types
+    {
+        Squere = 0,
+        Circle = 1,
+        PointyCircle = 2,
+        HalfCross = 3
+    }
 
     void Start()
     {
@@ -54,7 +60,7 @@ public class EnemySpawnManager : MonoBehaviour
 
         for (int i = 0; i < count; i++)
         {
-            SpawnEnemy(i % 4, i % 4);
+            SpawnEnemy(Types.Squere, i % 4, i % 4);
             yield return new WaitForSeconds(timeBetweenSpawns);
         }
     }
@@ -67,14 +73,14 @@ public class EnemySpawnManager : MonoBehaviour
 
         for (int i = 0; i < count; i++)
         {
-            SpawnEnemy(0);
+            SpawnEnemy(Types.Circle, i % 4, i % 4);
             yield return new WaitForSeconds(timeBetweenSpawns);
         }
     }
 
-    void SpawnEnemy(int pathVariant = 0, int tier = 0)
+    void SpawnEnemy(Types enemyIndex, int pathVariant = 0, int tier = 0)
     {
-        EnemyRoot enemy = Instantiate(circleEnemyPrefab).GetComponent<EnemyRoot>();
+        EnemyRoot enemy = Instantiate(enemies[(int)enemyIndex]).GetComponent<EnemyRoot>();
         enemy.Init(pathVariant, tier);
     }
 }

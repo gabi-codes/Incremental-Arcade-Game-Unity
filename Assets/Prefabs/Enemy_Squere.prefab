@@ -212,6 +212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5876542648388370624}
   - component: {fileID: 1054977798733805142}
+  - component: {fileID: 7399417878778263441}
   m_Layer: 0
   m_Name: Enemy_Squere
   m_TagString: Enemy
@@ -249,6 +250,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movement: {fileID: 5064977339368597549}
   core: {fileID: 2332560577202084504}
+--- !u!210 &7399417878778263441
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5698853362602124527}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 1
 --- !u!1 &8150747230961136893
 GameObject:
   m_ObjectHideFlags: 0
