@@ -24,6 +24,9 @@ public class EnemyCore : MonoBehaviour
     [SerializeField] private float springStrength = 80f;
     [SerializeField] private float damping = 12f;
 
+    [Header("Colors")]
+    [SerializeField] private Color[] colors; 
+
     private float currentHp;
     private Color color;
 
@@ -43,26 +46,39 @@ public class EnemyCore : MonoBehaviour
         switch (tier)
         {
             case 0:
-                color = Color.yellow;
-                scale = 1f;
-                maxHp += 10;
+                color = colors[0];
                 break;
 
             case 1:
-                speed *= 1.5f;
-                color = Color.blue;
-                scale = 1.2f;
+                color = colors[1];
+                scale = 1.1f;
+                speed *= 1.1f;
+                maxHp += 3;
+                maxHp *= 1.1f;
                 break;
 
             case 2:
-                speed *= 2.5f;
-                color = Color.red;
-                scale = 0.75f;
+                color = colors[2];
+                scale = 1.2f;
+                speed *= 1.25f;
+                maxHp += 8;
+                maxHp *= 1.2f;
                 break;
+
             case 3:
-                speed *= 2.0f;
-                color = Color.green;
-                scale = 0.8f;
+                color = colors[3];
+                scale = 1.3f;
+                speed *= 1.35f;
+                maxHp += 20;
+                maxHp *= 1.3f;
+                break;
+
+            case 4:
+                color = colors[4];
+                scale = 1.0f;
+                speed *= 1.75f;
+                maxHp += 10;
+                maxHp *= 1.2f;
                 break;
         }
 

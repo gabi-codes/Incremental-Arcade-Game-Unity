@@ -65,13 +65,25 @@ MonoBehaviour:
   outsideSprite: {fileID: 7504528989265214684}
   enemyHealth: {fileID: 3781150570772345234}
   vertPrefab: {fileID: 1430687316946656287, guid: 1f125eedd133f68439f1379f00ace9ec, type: 3}
-  maxHp: 2.5
+  maxHp: 3
   scale: 1
   damage: 1
   speed: 1
   hitForce: 4
   springStrength: 80
   damping: 12
+  colors:
+  - {r: 0.6745098, g: 0.95686275, b: 1, a: 1}
+  - {r: 0.30588236, g: 0.9098039, b: 1, a: 1}
+  - {r: 0.4392157, g: 1, b: 0.7921569, a: 1}
+  - {r: 0.495283, g: 1, b: 0.495283, a: 1}
+  - {r: 1, g: 0.97840124, b: 0.3537736, a: 1}
+  - {r: 1, g: 0.68193185, b: 0.20392156, a: 1}
+  - {r: 1, g: 0.05490196, b: 0, a: 1}
+  - {r: 0.972549, g: 0, b: 1, a: 1}
+  - {r: 0.4862745, g: 0, b: 1, a: 1}
+  - {r: 0.39607844, g: 0.39607844, b: 0.39607844, a: 0.25490198}
+  - {r: 1, g: 0.9529412, b: 0.7137255, a: 1}
 --- !u!61 &2381268796707684798
 BoxCollider2D:
   m_ObjectHideFlags: 0
